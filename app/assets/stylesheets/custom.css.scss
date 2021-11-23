@@ -3,6 +3,14 @@ $navbar-default-bg: #073B15;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html,body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; 
+}
+
 .center {
   text-align: center;
 }
@@ -69,4 +77,19 @@ $navbar-default-bg: #073B15;
 
 .colormatch a {
   color: #073B15;
+}
+
+.panel-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 5rem;
 }
