@@ -17,8 +17,16 @@ class RecipesTest < ActionDispatch::IntegrationTest
   test "should get recipes listing" do
     get recipes_url
     assert_template 'recipes/index'
+    assert_select "a[href=?]", recipe_url(@recipe1), text: @recipe1.name
+    assert_select "a[href=?]", recipe_url(@recipe2), text: @recipe2.name
+  end
+  
+  test "should get recipes show" do
+    get recipe_url(@recipe1)
+    assert_template 'recipes/show'
     assert_match @recipe1.name, response.body
-    assert_match @recipe2.name, response.body
+    assert_match @recipe1.description, response.body
+    assert_match @chef.chefname, response.body
   end
   
 end
